@@ -1,14 +1,27 @@
 const ratingCard = document.querySelector(".rating-card");
-const buttons = document.querySelectorAll(".number")
+const numberButtons = document.querySelectorAll(".number")
 const tyCard = document.querySelector(".ty-card")
 const rate    = document.querySelector(".rate")
+const submitBtn = document.querySelector(".btn")
+let btnRating = 2;
 
-buttons.forEach(btn =>{
-  btn.addEventListener("click", function(){
-    btn.setAttribute("style", "background-color: hsl(25, 97%, 53%); color: white;")
-    ratingCard.classList.add("visible")
-    tyCard.classList.remove("visible")
-   rate.textContent = `You selected ${btn.textContent} out of  5`
-  })
+submitBtn.addEventListener("click", submit)
+numberButtons.forEach(btn =>{
+  btn.addEventListener("click", handleClick)
 })
+
+
+function submit(){
+  ratingCard.classList.add("visible")
+  tyCard.classList.remove("visible")
+}
+
+function handleClick(event) {
+numberButtons.forEach(btn =>{
+  btn.classList.remove("active")
+});
+event.target.classList.add("active")
+btnRating = event.target.textContent;
+rate.textContent = `You selected ${btnRating} out of  5`
+}
 
