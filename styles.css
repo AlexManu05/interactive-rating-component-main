@@ -138,12 +138,6 @@ h2{
   margin-bottom: 0.5rem;
 }
 
-.attribution { 
-  font-size: 11px; 
-  margin-top: 1rem;
- }
-.attribution a { color: hsl(228, 45%, 44%); }
-
 @media  (max-width: 375px){
   body{
     padding: 25px;
